@@ -1,0 +1,1 @@
+The FSHOnly property is set to true, so no output specific to IG creation will be generated. The following properties are unused and only relevant for IG creation: id, name, copyrightYear, releaseLabel, publisher. Consider removing these properties from sushi-config.yaml.
