@@ -1,0 +1,82 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "EEBErrorcodeCS",
+  "id": "EEBErrorcodeCS",
+  "title": "CodeSystem für eEB Fehler",
+  "description": "eEB Fehler falls die Krankenkasse keine Ersatzbescheinigung ausstellen kann",
+  "url": "https://gematik.de/fhir/eeb/CodeSystem/EEBErrorcodeCS",
+  "concept": [
+    {
+      "code": "100",
+      "display": "Der Patient ist nicht bei der adressierten Krankenkasse versichert."
+    },
+    {
+      "code": "101",
+      "display": "Die übermittelte eEB entspricht nicht den Vorgaben und/oder ist nicht lesbar."
+    },
+    {
+      "code": "110",
+      "display": "Der Patient ist nicht eindeutig identifizierbar."
+    },
+    {
+      "code": "111",
+      "display": "Das angefragte Leistungsdatum ist unplausibel."
+    },
+    {
+      "code": "112",
+      "display": "Es liegt für den Patienten kein gültiges Versichertenverhältnis zum angefragten Leistungsdatum vor."
+    },
+    {
+      "code": "120",
+      "display": "Die Einwilligung des Patienten zur Freigabe der Bescheinigungsübermittlung an die Praxis liegt nicht vor."
+    },
+    {
+      "code": "130",
+      "display": "Es liegt ein Sonderfall/ eine Ausnahme vor. Bitten Sie den Patienten, mit der Krankenkasse Kontakt aufzunehmen."
+    },
+    {
+      "code": "201",
+      "display": "Die Signatur der eEB-Anfrage ist nicht gültig, da ein fehlerhaftes Zertifikat verwendet wurde oder nicht alle zur Zertifikatsprüfung erforderlichen Komponenten bzw. Ressourcen zur Verfügung standen."
+    },
+    {
+      "code": "202",
+      "display": "Die Signaturprüfung der eEB-Anfrage hat ergeben, dass die signierten Daten nicht mit den übermittelten Daten der eEB-Anfrage übereinstimmen."
+    },
+    {
+      "code": "210",
+      "display": "Die eEB-Anfrage ist nicht signiert. Die eEB-Anfrage ist ggf. manipuliert worden."
+    },
+    {
+      "code": "211",
+      "display": "Die Signatur der eEB-Anfrage konnte aufgrund eines falschen Formats nicht geprüft werden."
+    },
+    {
+      "code": "307",
+      "display": "Übermittlung ist fehlgeschlagen. Grund hierfür ist, dass die KIM-Nachricht zwar als eine verschlüsselte KIM-Nachricht gekennzeichnet wurde, aber auf Grund des falschen Formats nicht von der Krankenkasse entschlüsselt werden konnte."
+    },
+    {
+      "code": "309",
+      "display": "Übermittlung ist fehlgeschlagen. Grund hierfür ist, dass für die KIM-Nachricht keine Signatur vorhanden ist."
+    },
+    {
+      "code": "310",
+      "display": "Übermittlung ist fehlgeschlagen. Grund hierfür ist, dass die Signatur für die KIM-Nachricht aufgrund des falschen Formats nicht geprüft werden konnte."
+    },
+    {
+      "code": "311",
+      "display": "Die Integrität der Nachricht wurde verletzt. Die Prüfung der Signatur hat ergeben, dass die Nachricht manipuliert wurde."
+    },
+    {
+      "code": "313",
+      "display": "Die KIM-Nachricht konnte auf Grund eines nicht verfügbaren Schlüssels nicht entschlüsselt werden."
+    }
+  ],
+  "experimental": false,
+  "version": "1.0.0",
+  "publisher": "gematik GmbH",
+  "date": "2025-05-15",
+  "caseSensitive": true,
+  "count": 16
+}
