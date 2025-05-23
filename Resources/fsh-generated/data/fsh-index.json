@@ -1,0 +1,186 @@
+[
+  {
+    "outputFile": "CodeSystem-EEBErrorcodeCS.json",
+    "fshName": "EEBErrorcodeCS",
+    "fshType": "CodeSystem",
+    "fshFile": "codesystems/EEBErrorcodeCS.fsh",
+    "startLine": 1,
+    "endLine": 26
+  },
+  {
+    "outputFile": "Coverage-e9553161ca3c-413a-48fe-b908-04159be709fb.json",
+    "fshName": "EEBCoverageNoEgkSample",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBCoverageNoEgk.fsh",
+    "startLine": 78,
+    "endLine": 111
+  },
+  {
+    "outputFile": "OperationOutcome-3f624395-be34-4fac-9773-d735cb3a1f73.json",
+    "fshName": "EEBFehlerSampleMessage",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBFehler.fsh",
+    "startLine": 37,
+    "endLine": 49
+  },
+  {
+    "outputFile": "OperationOutcome-bbd0690c-6939-4c90-979c-9ab9b1ed1552.json",
+    "fshName": "EEBFehlerSampleBundle",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBFehler.fsh",
+    "startLine": 51,
+    "endLine": 62
+  },
+  {
+    "outputFile": "Patient-4149fdf9-2417-4a58-ac02-3473f5eb5431.json",
+    "fshName": "EEBKnownPatientPkvSample",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBKnownPatient.fsh",
+    "startLine": 48,
+    "endLine": 54
+  },
+  {
+    "outputFile": "Patient-437f2555-2396-4c64-a656-e9553161ca3c.json",
+    "fshName": "KBV_PR_FOR_PatientEgkNoAddressLineSample",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBCoverageEgkNoAddressLine.fsh",
+    "startLine": 69,
+    "endLine": 88
+  },
+  {
+    "outputFile": "Patient-437f2555-2396-4c64-a656-e9553161ca3u.json",
+    "fshName": "KBV_PR_FOR_PatientEgkSampleHBAqueried",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBCoverageEgk.fsh",
+    "startLine": 67,
+    "endLine": 91
+  },
+  {
+    "outputFile": "Patient-b8f0f69c-af1a-480b-8abf-44ab11aa23c5.json",
+    "fshName": "EEBKnownPatientSample",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBKnownPatient.fsh",
+    "startLine": 40,
+    "endLine": 46
+  },
+  {
+    "outputFile": "Patient-d62d9d82-2396-4c64-a656-2e67b5761523.json",
+    "fshName": "KBV_PR_FOR_PatientNoEgkSample",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBCoverageNoEgk.fsh",
+    "startLine": 57,
+    "endLine": 75
+  },
+  {
+    "outputFile": "StructureDefinition-EEBKnownPatient.json",
+    "fshName": "EEBKnownPatient",
+    "fshType": "Profile",
+    "fshFile": "profiles/EEBKnownPatient.fsh",
+    "startLine": 3,
+    "endLine": 36
+  },
+  {
+    "outputFile": "StructureDefinition-allgemeine-versicherungsdaten.json",
+    "fshName": "AllgemeineVersicherungsdaten",
+    "fshType": "Extension",
+    "fshFile": "extensions/AllgemeineVersicherungsdaten.fsh",
+    "startLine": 1,
+    "endLine": 10
+  },
+  {
+    "outputFile": "StructureDefinition-eeb-coverage-egk-noaddressline.json",
+    "fshName": "EEBCoverageEgkNoAddressLine",
+    "fshType": "Profile",
+    "fshFile": "profiles/EEBCoverageEgkNoAddressLine.fsh",
+    "startLine": 1,
+    "endLine": 59
+  },
+  {
+    "outputFile": "StructureDefinition-eeb-coverage-egk.json",
+    "fshName": "EEBCoverageEgk",
+    "fshType": "Profile",
+    "fshFile": "profiles/EEBCoverageEgk.fsh",
+    "startLine": 1,
+    "endLine": 57
+  },
+  {
+    "outputFile": "StructureDefinition-eeb-coverage-no-egk.json",
+    "fshName": "EEBCoverageNoEgk",
+    "fshType": "Profile",
+    "fshFile": "profiles/EEBCoverageNoEgk.fsh",
+    "startLine": 1,
+    "endLine": 53
+  },
+  {
+    "outputFile": "StructureDefinition-eeb-fehler.json",
+    "fshName": "EEBFehler",
+    "fshType": "Profile",
+    "fshFile": "profiles/EEBFehler.fsh",
+    "startLine": 1,
+    "endLine": 33
+  },
+  {
+    "outputFile": "StructureDefinition-eeb-operation-outcome-issue-identifier.json",
+    "fshName": "EEBOperationOutcomeIssueIdentifier",
+    "fshType": "Extension",
+    "fshFile": "extensions/EEBOperationOutcomeIssueIdentifier.fsh",
+    "startLine": 1,
+    "endLine": 37
+  },
+  {
+    "outputFile": "StructureDefinition-einverstaendnis.json",
+    "fshName": "Einverstaendnis",
+    "fshType": "Extension",
+    "fshFile": "extensions/Einverstaendnis.fsh",
+    "startLine": 1,
+    "endLine": 9
+  },
+  {
+    "outputFile": "StructureDefinition-geschuetzte-versichertendaten.json",
+    "fshName": "GeschuetzteVersichertendaten",
+    "fshType": "Extension",
+    "fshFile": "extensions/GeschuetzteVersichertendaten.fsh",
+    "startLine": 1,
+    "endLine": 10
+  },
+  {
+    "outputFile": "StructureDefinition-institutionskennzeichen.json",
+    "fshName": "Institutionskennzeichen",
+    "fshType": "Extension",
+    "fshFile": "extensions/Institutionskennzeichen.fsh",
+    "startLine": 1,
+    "endLine": 9
+  },
+  {
+    "outputFile": "StructureDefinition-leistungsdatum.json",
+    "fshName": "Leistungsdatum",
+    "fshType": "Extension",
+    "fshFile": "extensions/Leistungsdatum.fsh",
+    "startLine": 1,
+    "endLine": 9
+  },
+  {
+    "outputFile": "StructureDefinition-persoenliche-versichertendaten.json",
+    "fshName": "PersoenlicheVersichertendaten",
+    "fshType": "Extension",
+    "fshFile": "extensions/PersoenlicheVersichertendaten.fsh",
+    "startLine": 1,
+    "endLine": 10
+  },
+  {
+    "outputFile": "ValueSet-EEBAnfrageUrsprungVS.json",
+    "fshName": "EEBAnfrageUrsprungVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/EEBAnfrageUrsprungVS.fsh",
+    "startLine": 1,
+    "endLine": 8
+  },
+  {
+    "outputFile": "ValueSet-EEBErrorcodeVS.json",
+    "fshName": "EEBErrorcodeVS",
+    "fshType": "ValueSet",
+    "fshFile": "valuesets/EEBErrorcodeVS.fsh",
+    "startLine": 1,
+    "endLine": 7
+  }
+]
