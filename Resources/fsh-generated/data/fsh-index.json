@@ -1,5 +1,69 @@
 [
   {
+    "outputFile": "Bundle-1f311c40-fee9-4b03-b0c4-c29d432f2371.json",
+    "fshName": "EEBAnfrageBundleSampleKnownPatient",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBAnfrageBundle.fsh",
+    "startLine": 177,
+    "endLine": 192
+  },
+  {
+    "outputFile": "Bundle-43bb7e49-inva-lide-pati-entstrassed6b.json",
+    "fshName": "EEBBescheinigungBundleSampleNoEgk",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBBescheinigungBundle.fsh",
+    "startLine": 135,
+    "endLine": 150
+  },
+  {
+    "outputFile": "Bundle-4a270af6-nneu-ohne-kvnr-dfe20acfb5c5.json",
+    "fshName": "EEBBescheinigungBundle2",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBBescheinigungBundle.fsh",
+    "startLine": 244,
+    "endLine": 258
+  },
+  {
+    "outputFile": "Bundle-96120812-a785-4fe3-a1e9-244314fdad9d.json",
+    "fshName": "EEBAnfrageBundleSampleKnownKBV_PR_FOR_Patient",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBAnfrageBundle.fsh",
+    "startLine": 194,
+    "endLine": 209
+  },
+  {
+    "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-544564792089.json",
+    "fshName": "EEBBescheinigungBundleSampleEgk",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBBescheinigungBundle.fsh",
+    "startLine": 101,
+    "endLine": 116
+  },
+  {
+    "outputFile": "Bundle-9b6ac30d-246d-4eab-af83-54456479208u.json",
+    "fshName": "EEBBescheinigungBundleEgkNoAddressLine",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBBescheinigungBundle.fsh",
+    "startLine": 118,
+    "endLine": 133
+  },
+  {
+    "outputFile": "Bundle-cecef81d-ab68-4d5a-9e22-7b3e8edce6e6.json",
+    "fshName": "EEBBescheinigungBundleSampleEgkPkv",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBBescheinigungBundle.fsh",
+    "startLine": 152,
+    "endLine": 167
+  },
+  {
+    "outputFile": "Bundle-cef4c975-753e-4b25-bec3-6549c7360e0a.json",
+    "fshName": "EEBAnfrageBundleSampleUnknownKBV_PR_FOR_Patient",
+    "fshType": "Instance",
+    "fshFile": "profiles/EEBAnfrageBundle.fsh",
+    "startLine": 211,
+    "endLine": 226
+  },
+  {
     "outputFile": "CodeSystem-EEBErrorcodeCS.json",
     "fshName": "EEBErrorcodeCS",
     "fshType": "CodeSystem",
