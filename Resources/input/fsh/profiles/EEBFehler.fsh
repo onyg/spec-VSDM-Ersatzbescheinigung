@@ -4,7 +4,9 @@ Id: eeb-fehler
 // Operation Outcome analog zu https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_health_insurance_Practitioner|1.1.0 und Verwendung der EEB-spezifischen ErrorCodes
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler"
 * insert Meta
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler" (exactly)
+// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBFehler" (exactly)
+* meta.profile = Canonical(EEBFehler) (exactly)
+
 * issue ..1 MS
 * issue.extension ^slicing.discriminator.type = #value
 * issue.extension ^slicing.discriminator.path = "url"

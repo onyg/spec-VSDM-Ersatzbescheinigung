@@ -1,90 +1,101 @@
-// Profile: EEBBescheinigungBundle
-// Parent: Bundle
-// Id: eeb-bescheinigung-bundle
-// * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
-// * insert Meta
+Invariant: -eeb-angabePatientPLZ
+Description: "In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe."
+Severity: #error
+Expression: "entry.where(resource is Patient).resource.address.postalCode.exists()"
+
+Invariant: -eeb-checkConditionCode49
+Description: "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource muss mit KVNR  [authentisierte App-Anfrage]."
+Severity: #error
+Expression: "entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') and entry.where(resource is Patient).resource.identifier.count() > 0)"
+
+Invariant: -eeb-checkConditionOtherCodes
+Description: "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil (EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein) und (die Patient-Resource darf keine Straße in der Adressangabe enthalten oder muss ein Postfach sein) [SMC-B Prüfung]."
+Severity: #error
+Expression: "(entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.30' or
+entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.31' or
+entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.45' or
+entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46' or
+entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or
+entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))"
+
+
+Profile: EEBBescheinigungBundle
+Parent: Bundle
+Id: eeb-bescheinigung-bundle
+* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+* insert Meta
 // * meta 1..1
 // * meta.profile 1..1
 // * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle" (exactly)
-// * id 1..1
-// * identifier 1..
-// * identifier.use 0..0
-// * identifier.type 0..0
-// * identifier.system 1..
-// * identifier.system = "urn:ietf:rfc:3986" (exactly)
-// * identifier.value 1..
-// * identifier.value ^short = "Eindeutige UUID als übergreifender Identifier für mehrere Anfragen eines Vorgangs"
-// * identifier.period 0..0
-// * identifier.assigner 0..0
-// * type = #message (exactly)
-// * timestamp 1..
-// * total 0..0
-// * link 0..0
-// * signature 0..0
-// * entry 1..
-// * entry ^slicing.discriminator.type = #profile
-// * entry ^slicing.discriminator.path = "resource"
-// * entry ^slicing.rules = #closed
-// * entry 3..3
-// * entry contains
-//     EEBBescheinigungHeader 1..1 and
-//     KBVFORPatient 1..1 and
-//     EEBCoverageEgk 0..1 and
-//     EEBCoverageEgkNoAddressLine 0..1 and
-//     EEBCoverageNoEgk 0..1
-// * entry[EEBBescheinigungHeader].link ..0
-// * entry[EEBBescheinigungHeader].resource 1..
-// * entry[EEBBescheinigungHeader].resource only EEBBescheinigungHeader
-// * entry[EEBBescheinigungHeader].search ..0
-// * entry[EEBBescheinigungHeader].request ..0
-// * entry[EEBBescheinigungHeader].response ..0
-// * entry[KBVFORPatient].link ..0
-// * entry[KBVFORPatient].resource 1..
-// * entry[KBVFORPatient].resource only KBV_PR_FOR_Patient
-// * entry[KBVFORPatient].search ..0
-// * entry[KBVFORPatient].request ..0
-// * entry[KBVFORPatient].response ..0
-// * entry[EEBCoverageEgk].link ..0
-// * entry[EEBCoverageEgk].resource 1..
-// * entry[EEBCoverageEgk].resource only EEBCoverageEgk
-// * entry[EEBCoverageEgk].search ..0
-// * entry[EEBCoverageEgk].request ..0
-// * entry[EEBCoverageEgk].response ..0
-// * entry[EEBCoverageEgkNoAddressLine].link ..0
-// * entry[EEBCoverageEgkNoAddressLine].resource 1..
-// * entry[EEBCoverageEgkNoAddressLine].resource only EEBCoverageEgkNoAddressLine
-// * entry[EEBCoverageEgkNoAddressLine].search ..0
-// * entry[EEBCoverageEgkNoAddressLine].request ..0
-// * entry[EEBCoverageEgkNoAddressLine].response ..0
-// * entry[EEBCoverageNoEgk].link ..0
-// * entry[EEBCoverageNoEgk].resource 1..
-// * entry[EEBCoverageNoEgk].resource only EEBCoverageNoEgk
-// * entry[EEBCoverageNoEgk].search ..0
-// * entry[EEBCoverageNoEgk].request ..0
-// * entry[EEBCoverageNoEgk].response ..0
-// * obeys -eeb-angabePatientPLZ
-// * obeys -eeb-checkConditionCode49
-// * obeys -eeb-checkConditionOtherCodes
+* meta 1..1
+  * profile 1..1
+  * profile = Canonical(EEBBescheinigungBundle) (exactly)
 
-// Invariant: -eeb-angabePatientPLZ
-// Description: "In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe."
-// Severity: #error
-// Expression: "entry.where(resource is Patient).resource.address.postalCode.exists()"
+* id 1..1
+* identifier 1..
+* identifier.use 0..0
+* identifier.type 0..0
+* identifier.system 1..
+* identifier.system = "urn:ietf:rfc:3986" (exactly)
+* identifier.value 1..
+* identifier.value ^short = "Eindeutige UUID als übergreifender Identifier für mehrere Anfragen eines Vorgangs"
+* identifier.period 0..0
+* identifier.assigner 0..0
+* type = #message (exactly)
+* timestamp 1..
+* total 0..0
+* link 0..0
+* signature 0..0
+* entry 1..
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #closed
+* entry 3..3
+* entry contains
+    EEBBescheinigungHeader 1..1 and
+    KBVFORPatient 1..1 and
+    EEBCoverageEgk 0..1 and
+    EEBCoverageEgkNoAddressLine 0..1 and
+    EEBCoverageNoEgk 0..1
+* entry[EEBBescheinigungHeader].link ..0
+* entry[EEBBescheinigungHeader].resource 1..
+* entry[EEBBescheinigungHeader].resource only EEBBescheinigungHeader
+* entry[EEBBescheinigungHeader].search ..0
+* entry[EEBBescheinigungHeader].request ..0
+* entry[EEBBescheinigungHeader].response ..0
 
-// Invariant: -eeb-checkConditionCode49
-// Description: "Wenn Versicherter '1.2.276.0.76.4.49', dann muss EEBCoverageEgk, Patient-Resource muss mit KVNR  [authentisierte App-Anfrage]."
-// Severity: #error
-// Expression: "entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49' implies (entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk') and entry.where(resource is Patient).resource.identifier.count() > 0)"
+* entry[KBVFORPatient].link ..0
+* entry[KBVFORPatient].resource 1..
+* entry[KBVFORPatient].resource only KBV_PR_FOR_Patient
+* entry[KBVFORPatient].search ..0
+* entry[KBVFORPatient].request ..0
+* entry[KBVFORPatient].response ..0
 
-// Invariant: -eeb-checkConditionOtherCodes
-// Description: "Wenn eventCoding.code weder HBA noch Versicherter ist, dann darf die Coverage nur vom Profil (EEBCoverageEgkNoAddressLine oder EEBCoverageNoEgk sein) und (die Patient-Resource darf keine Straße in der Adressangabe enthalten oder muss ein Postfach sein) [SMC-B Prüfung]."
-// Severity: #error
-// Expression: "(entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.30' or
-// entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.31' or
-// entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.45' or
-// entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.46' or
-// entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.47' or
-// entry.where(resource is MessageHeader).resource.event.code = '1.2.276.0.76.4.49').not() implies ((entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine') or entry.where(resource is Coverage).resource.meta.profile.contains('https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk')) and (entry.where(resource is Patient).resource.address.line.count() = 0 or entry.where(resource is Patient).resource.address.type = 'postal'))"
+* entry[EEBCoverageEgk].link ..0
+* entry[EEBCoverageEgk].resource 1..
+* entry[EEBCoverageEgk].resource only EEBCoverageEgk
+* entry[EEBCoverageEgk].search ..0
+* entry[EEBCoverageEgk].request ..0
+* entry[EEBCoverageEgk].response ..0
+
+* entry[EEBCoverageEgkNoAddressLine].link ..0
+* entry[EEBCoverageEgkNoAddressLine].resource 1..
+* entry[EEBCoverageEgkNoAddressLine].resource only EEBCoverageEgkNoAddressLine
+* entry[EEBCoverageEgkNoAddressLine].search ..0
+* entry[EEBCoverageEgkNoAddressLine].request ..0
+* entry[EEBCoverageEgkNoAddressLine].response ..0
+
+* entry[EEBCoverageNoEgk].link ..0
+* entry[EEBCoverageNoEgk].resource 1..
+* entry[EEBCoverageNoEgk].resource only EEBCoverageNoEgk
+* entry[EEBCoverageNoEgk].search ..0
+* entry[EEBCoverageNoEgk].request ..0
+* entry[EEBCoverageNoEgk].response ..0
+
+* obeys -eeb-angabePatientPLZ
+* obeys -eeb-checkConditionCode49
+* obeys -eeb-checkConditionOtherCodes
+
 
 // // Beispielgenerierung
 // Instance: EEBBescheinigungBundleSampleEgk

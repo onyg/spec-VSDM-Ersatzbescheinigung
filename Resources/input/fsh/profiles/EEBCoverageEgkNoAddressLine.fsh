@@ -3,8 +3,11 @@ Parent: coverage-de-basis
 Id: eeb-coverage-egk-noaddressline
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine"
 * insert Meta
+// * meta 1..1
+// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine" (exactly)
 * meta 1..1
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgkNoAddressLine" (exactly)
+  * profile = Canonical(EEBCoverageEgkNoAddressLine) (exactly)
+
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open

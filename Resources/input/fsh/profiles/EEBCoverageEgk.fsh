@@ -3,8 +3,11 @@ Parent: coverage-de-basis
 Id: eeb-coverage-egk
 * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk"
 * insert Meta
+// * meta 1..1
+// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk" (exactly)
 * meta 1..1
-* meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageEgk" (exactly)
+  * profile = Canonical(EEBCoverageEgk) (exactly)
+
 * extension ^slicing.discriminator.type = #value
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open

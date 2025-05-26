@@ -2,14 +2,14 @@ Alias: $sid-identifier-kvid-10 = http://fhir.de/sid/gkv/kvid-10
 
 Profile: EEBKnownPatient
 Parent: Patient
-Id: EEBKnownPatient
-// Id: eeb-known-patient
-// * ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
+// Id: EEBKnownPatient
+Id: eeb-known-patient
+* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient"
 * insert Meta
 
 * meta 1..1
   * profile 1..1
-  * profile = Canonical(EEBKnownPatient)
+  * profile = Canonical(EEBKnownPatient) (exactly)
 
 * identifier 1..1 MS
   * ^slicing.discriminator.type = #value
