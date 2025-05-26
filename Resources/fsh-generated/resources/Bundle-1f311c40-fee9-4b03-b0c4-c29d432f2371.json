@@ -20,8 +20,7 @@
         "id": "bb03a437-fe56-46f9-8622-ffc3766e7c70",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader",
-            "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+            "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
           ]
         },
         "extension": [
@@ -71,6 +70,14 @@
         },
         "identifier": [
           {
+            "type": {
+              "coding": [
+                {
+                  "system": "http://fhir.de/CodeSystem/identifier-type-de-basis",
+                  "code": "KVZ10"
+                }
+              ]
+            },
             "system": "http://fhir.de/sid/gkv/kvid-10",
             "value": "T024791905"
           }

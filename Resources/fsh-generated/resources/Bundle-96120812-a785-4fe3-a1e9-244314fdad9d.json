@@ -20,8 +20,7 @@
         "id": "1ab11ab3-c73b-4144-8706-be3fc090b007",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader",
-            "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+            "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
           ]
         },
         "extension": [

@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "eeb-known-patient",
+  "id": "EEBKnownPatient",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBKnownPatient",
   "version": "1.0.0",
   "name": "EEBKnownPatient",

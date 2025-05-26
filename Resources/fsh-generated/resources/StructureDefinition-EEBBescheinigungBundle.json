@@ -1,6 +1,6 @@
 {
   "resourceType": "StructureDefinition",
-  "id": "eeb-bescheinigung-bundle",
+  "id": "EEBBescheinigungBundle",
   "url": "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle",
   "version": "1.0.0",
   "name": "EEBBescheinigungBundle",
@@ -152,7 +152,7 @@
           {
             "code": "MessageHeader",
             "profile": [
-              "https://gematik.de/fhir/eeb/StructureDefinition/eeb-bescheinigung-header"
+              "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
             ]
           }
         ]

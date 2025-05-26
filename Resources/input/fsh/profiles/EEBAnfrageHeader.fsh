@@ -1,14 +1,10 @@
 Profile: EEBAnfrageHeader
 Parent: MessageHeader
-Id: eeb-anfrage-header
-* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
+Id: EEBAnfrageHeader
 * insert Meta
-// * meta 1..1
-// * meta.profile 1..1
-// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader" (exactly)
 * meta 1..1
   * profile 1..1
-  * profile = Canonical(EEBBescheinigungBundle) (exactly)
+  * profile = Canonical(EEBAnfrageHeader) (exactly)
 
 
 * extension ^slicing.discriminator.type = #value
@@ -44,7 +40,6 @@ Id: eeb-anfrage-header
 * responsible 0..0
 * reason 0..0
 * response 0..0
-//* focus 0..0
 * definition 0..0
 
 
@@ -54,7 +49,6 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "bb03a437-fe56-46f9-8622-ffc3766e7c70"
-// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
@@ -74,7 +68,6 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "1ab11ab3-c73b-4144-8706-be3fc090b007"
-// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
@@ -94,7 +87,6 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "591371dd-1ff4-48e7-ac25-29988a7ee903"
-// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
@@ -114,7 +106,6 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "97d364a4-33ca-4968-8cea-89ef50e006b6"
-// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
@@ -134,7 +125,6 @@ InstanceOf: EEBAnfrageHeader
 Title: "Header of EEBAnfrageBundle"
 Usage: #inline
 * id = "35c13445-127b-4c88-b819-68bff12293c2"
-// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBAnfrageHeader"
 * eventCoding.system = "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID"
 * eventCoding.code = #1.2.276.0.76.4.50
 * eventCoding.display = "Betriebsstätte Arzt"
@@ -148,4 +138,3 @@ Usage: #inline
 * extension[=][Institutionskennzeichen].valueIdentifier.system = "http://fhir.de/sid/arge-ik/iknr"
 * extension[=][Institutionskennzeichen].valueIdentifier.value = "12345678"
 * focus[+].reference = "Patient/77355dc2-07cc-4cc6-bd78-afccfb7d0106"
-

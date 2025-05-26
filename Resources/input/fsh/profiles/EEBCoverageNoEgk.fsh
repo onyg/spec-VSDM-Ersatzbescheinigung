@@ -1,10 +1,7 @@
 Profile: EEBCoverageNoEgk
 Parent: coverage-de-basis
-Id: eeb-coverage-no-egk
-* ^url = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk"
+Id: EEBCoverageNoEgk
 * insert Meta
-// * meta 1..1
-// * meta.profile = "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageNoEgk" (exactly)
 * meta 1..1
   * profile = Canonical(EEBCoverageNoEgk) (exactly)
 
@@ -12,16 +9,10 @@ Id: eeb-coverage-no-egk
 * extension ^slicing.discriminator.path = "url"
 * extension ^slicing.rules = #open
 * extension contains
-//    $version-vsdm named versionEgk 1..1 and
     $versichertenart named versichertenart 1..1 and
-//    $kostenerstattung named kostenerstattung 0..0 and
     $wop named wop 1..1 and
     $besondere-personengruppe named besonderePersonengruppe 1..1 and
-//    $dmp-kennzeichen named dmpKennzeichen 0..0 and
-//    $ruhender-leistungsanspruch named ruhenderLeistungsanspruch 0..0 and
     $zuzahlungsstatus named zuzahlungsstatus 1..1
-//    $patient-genderIdentity named genderIdentity 0..0
-//* extension[versionEgk].valueString 1..1
 * identifier 0..0
 * status = #active (exactly)
 * type 1..1

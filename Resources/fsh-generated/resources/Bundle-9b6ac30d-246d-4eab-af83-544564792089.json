@@ -20,7 +20,7 @@
         "id": "bd901c08-0133-4276-b34b-eb810a62deda",
         "meta": {
           "profile": [
-            "https://gematik.de/fhir/eeb/StructureDefinition/eeb-bescheinigung-header"
+            "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
           ]
         },
         "response": {
